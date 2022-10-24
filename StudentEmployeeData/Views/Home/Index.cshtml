@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model EmployeesViewModel
+
+<table class="table table-bordered table-striped">
+    <thead class="font-weight-bold bg-secondary text-white">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model.Employees)
+        {
+            <tr>
+                <td>@e.FirstName</td>
+                <td>@e.LastName</td>
+
+                <td>
+                    <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
