@@ -20,7 +20,8 @@ namespace StudentEmployeeData.Controllers
             _repo = temp;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult ViewEmployees()
         {
             var x = new EmployeesViewModel
             {
@@ -30,9 +31,12 @@ namespace StudentEmployeeData.Controllers
             return View(x);
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult EmployeeDetails(int employeeId)
         {
-            return View();
+            Employee employee = _repo.Employees.Where(x => x.EmployeeId == employeeId).Single();
+
+            return View(employee);
         }
 
     }
