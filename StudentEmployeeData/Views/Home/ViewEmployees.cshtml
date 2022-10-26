@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "View Employees";
 }
 
 @model EmployeesViewModel
@@ -20,7 +20,12 @@
                 <td>@e.LastName</td>
 
                 <td>
-                    <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Details</a>
+                    <a class="btn btn-outline-secondary"
+                       asp-controller="Home"
+                       asp-action="EmployeeDetails"
+                       asp-route-employeeId="@e.EmployeeId">
+                        Details
+                    </a>
                 </td>
             </tr>
         }
