@@ -6,6 +6,10 @@
 
 <h1>Details for @Model.FirstName @Model.LastName:</h1>
 
+<a class="btn btn-outline-secondary" asp-controller="Home" asp-action="ViewEmployees">Back</a>
+<a class="btn btn-outline-primary" asp-controller="Home" asp-action="Edit" asp-route-employeeId="@Model.EmployeeId">Edit</a>
+<a class="btn btn-outline-danger" asp-controller="Home" asp-action="Delete" asp-route-employeeId="@Model.EmployeeId">Delete</a>
+
 <table class="table table-bordered table-striped">
     <thead class="font-weight-bold bg-secondary text-white">
         <tr>
