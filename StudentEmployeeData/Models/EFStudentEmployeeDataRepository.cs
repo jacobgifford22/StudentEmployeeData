@@ -30,6 +30,7 @@ namespace StudentEmployeeData.Models
 
         public void SaveEmployee(Employee e)
         {
+            _context.Update(e);
             _context.SaveChanges();
         }
     }

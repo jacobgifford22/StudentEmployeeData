@@ -39,5 +39,64 @@ namespace StudentEmployeeData.Controllers
             return View(employee);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Employee e)
+        {
+            if (ModelState.IsValid)
+            {
+                _repo.AddEmployee(e);
+
+                return RedirectToAction("ViewEmployees");
+            }
+            else
+            {
+                return View(e);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int employeeId)
+        {
+            var employee = _repo.Employees.Single(x => x.EmployeeId == employeeId);
+
+            return View("Create", employee);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Employee e)
+        {
+            if (ModelState.IsValid)
+            {
+                _repo.SaveEmployee(e);
+
+                return RedirectToAction("ViewEmployees");
+            }
+            else
+            {
+                return RedirectToAction("Edit", new { employeeId = e.EmployeeId });
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int employeeId)
+        {
+            var employee = _repo.Employees.Single(x => x.EmployeeId == employeeId);
+
+            return View(employee);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Employee e)
+        {
+            _repo.DeleteEmployee(e);
+
+            return RedirectToAction("ViewEmployees");
+        }
     }
 }

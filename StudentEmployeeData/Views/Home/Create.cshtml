@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+@model Employee
+
+<h1>Edit employee details:</h1>
+
+<form method="post">
+    <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="ViewEmployees">Cancel</a>
+    <button class="btn btn-outline-primary" type="submit">Save</button>
+
+    <table class="table table-bordered table-striped">
+        <thead class="font-weight-bold bg-secondary text-white">
+            <tr>
+                <td>Field</td>
+                <td>Value</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="FirstName">First Name</label></td>
+                <td><input asp-for="FirstName" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="LastName">Last Name</label></td>
+                <td><input asp-for="LastName" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="International">International</label></td>
+                <td><input asp-for="International" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Gender">Gender</label></td>
+                <td><input asp-for="Gender" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Email">Email</label></td>
+                <td><input asp-for="Email" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="ExpectedHours">Expected Hours</label></td>
+                <td><input asp-for="ExpectedHours" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Semester">Semester</label></td>
+                <td><input asp-for="Semester" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Year">Year</label></td>
+                <td><input asp-for="Year" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Phone">Phone</label></td>
+                <td><input asp-for="Phone" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="BYUID">BYU ID</label></td>
+                <td><input asp-for="BYUID" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="PositionType">Position Type</label></td>
+                <td><input asp-for="PositionType" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="ClassCode">Class Code</label></td>
+                <td><input asp-for="ClassCode" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="EmplRecord">Empl Record</label></td>
+                <td><input asp-for="EmplRecord" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Supervisor">Supervisor</label></td>
+                <td><input asp-for="Supervisor" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="HireDate">Hire Date</label></td>
+                <td><input asp-for="HireDate" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="PayRate">Pay Rate</label></td>
+                <td><input asp-for="PayRate" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="LastPayIncrease">Last Pay Increase</label></td>
+                <td><input asp-for="LastPayIncrease" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="PayIncreaseAmount">Pay Increase Amount</label></td>
+                <td><input asp-for="PayIncreaseAmount" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="IncreaseInputDate">Increase Input Date</label></td>
+                <td><input asp-for="IncreaseInputDate" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="YearInProgram">Year In Program</label></td>
+                <td><input asp-for="YearInProgram" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="PayGradTuition">Pay Grad Tuition</label></td>
+                <td><input asp-for="PayGradTuition" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="NameChangeCompleted">Name Change Completed</label></td>
+                <td><input asp-for="NameChangeCompleted" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Notes">Notes</label></td>
+                <td><textarea asp-for="Notes"></textarea></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="Terminated">Terminated</label></td>
+                <td><input asp-for="Terminated" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="TerminationDate">Termination Date</label></td>
+                <td><input asp-for="TerminationDate" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="QualtricsSurveySent">Qualtrics Survey Sent</label></td>
+                <td><input asp-for="QualtricsSurveySent" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="SubmittedEForm">Submitted E-Form</label></td>
+                <td><input asp-for="SubmittedEForm" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="EFormSubmissionDate">E-Form Submission Date</label></td>
+                <td><input asp-for="EFormSubmissionDate" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="AuthorizationToWorkReceived">Authorization To Work Received</label></td>
+                <td><input asp-for="AuthorizationToWorkReceived" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="AuthorizationToWorkEmailSentDate">Authorization To Work Email Sent Date</label></td>
+                <td><input asp-for="AuthorizationToWorkEmailSentDate" /></td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold"><label asp-for="BYUName">BYU Name</label></td>
+                <td><input asp-for="BYUName" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
