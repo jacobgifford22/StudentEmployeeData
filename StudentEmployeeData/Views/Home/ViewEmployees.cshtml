@@ -6,7 +6,6 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        @*<h6 class="m-0 font-weight-bold text-primary">BYU Student Employee Summary Data</h6>*@
         <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Create">Add Employee</a>
     </div>
     <div class="card-body">
@@ -59,7 +58,8 @@
                             <td>@e.PositionType</td>
                             <td>@e.ClassCode</td>
                             <td>@e.Supervisor</td>
-                            <td><a asp-controller="home" asp-action="EmployeeDetails" asp-route-employeeId="@e.EmployeeId">View Details</a></td>
+                            <td><a class="btn btn-outline-secondary" asp-controller="home" asp-action="EmployeeDetails" 
+                                   asp-route-employeeId="@e.EmployeeId">Details</a></td>
                         </tr>
                     }
                 </tbody>

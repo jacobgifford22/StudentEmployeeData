@@ -4,143 +4,150 @@
 
 @model Employee
 
-<h1>Details for @Model.FirstName @Model.LastName:</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h3>Details for @Model.FirstName @Model.LastName:</h3>
 
-<a class="btn btn-outline-secondary" asp-controller="Home" asp-action="ViewEmployees">Back</a>
-<a class="btn btn-outline-primary" asp-controller="Home" asp-action="Edit" asp-route-employeeId="@Model.EmployeeId">Edit</a>
-<a class="btn btn-outline-danger" asp-controller="Home" asp-action="Delete" asp-route-employeeId="@Model.EmployeeId">Delete</a>
-
-<table class="table table-bordered table-striped">
-    <thead class="font-weight-bold bg-secondary text-white">
-        <tr>
-            <td>Field</td>
-            <td>Value</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="font-weight-bold">First Name</td>
-            <td>@Model.FirstName</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Last Name</td>
-            <td>@Model.LastName</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">International</td>
-            <td>@Model.International</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Gender</td>
-            <td>@Model.Gender</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Email</td>
-            <td>@Model.Email</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Expected Hours</td>
-            <td>@Model.ExpectedHours</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Semester</td>
-            <td>@Model.Semester</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Year</td>
-            <td>@Model.Year</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Phone</td>
-            <td>@Model.Phone</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">BYU ID</td>
-            <td>@Model.BYUID</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Position Type</td>
-            <td>@Model.PositionType</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Class Code</td>
-            <td>@Model.ClassCode</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Empl Record</td>
-            <td>@Model.EmplRecord</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Supervisor</td>
-            <td>@Model.Supervisor</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Hire Date</td>
-            <td>@Model.HireDate</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Pay Rate</td>
-            <td>$@Model.PayRate</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Last Pay Increase</td>
-            <td>@Model.LastPayIncrease</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Pay Increase Amount</td>
-            <td>$@Model.PayIncreaseAmount</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Increase Input Date</td>
-            <td>@Model.IncreaseInputDate</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Year In Program</td>
-            <td>@Model.YearInProgram</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Pay Grad Tuition</td>
-            <td>@Model.PayGradTuition</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Name Change Completed</td>
-            <td>@Model.NameChangeCompleted</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Notes</td>
-            <td>@Model.Notes</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Terminated</td>
-            <td>@Model.Terminated</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Termination Date</td>
-            <td>@Model.TerminationDate</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Qualtrics Survey Sent</td>
-            <td>@Model.QualtricsSurveySent</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Submitted E-Form</td>
-            <td>@Model.SubmittedEForm</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">E-Form Submission Date</td>
-            <td>@Model.EFormSubmissionDate</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Authorization To Work Received</td>
-            <td>@Model.AuthorizationToWorkReceived</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Authorization To Work Email Sent Date</td>
-            <td>@Model.AuthorizationToWorkEmailSentDate</td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">BYU Name</td>
-            <td>@Model.BYUName</td>
-        </tr>
-    </tbody>
-</table>
+        <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="ViewEmployees">Back</a>
+        <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Edit" asp-route-employeeId="@Model.EmployeeId">Edit</a>
+        <a class="btn btn-outline-danger" asp-controller="Home" asp-action="Delete" asp-route-employeeId="@Model.EmployeeId">Delete</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Name</td>
+                        <td>@Model.FirstName</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>@Model.LastName</td>
+                    </tr>
+                    <tr>
+                        <td>International</td>
+                        <td>@Model.International</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>@Model.Gender</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <td>Expected Hours</td>
+                        <td>@Model.ExpectedHours</td>
+                    </tr>
+                    <tr>
+                        <td>Semester</td>
+                        <td>@Model.Semester</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>@Model.Year</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>@Model.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>BYU ID</td>
+                        <td>@Model.BYUID</td>
+                    </tr>
+                    <tr>
+                        <td>Position Type</td>
+                        <td>@Model.PositionType</td>
+                    </tr>
+                    <tr>
+                        <td>Class Code</td>
+                        <td>@Model.ClassCode</td>
+                    </tr>
+                    <tr>
+                        <td>Empl Record</td>
+                        <td>@Model.EmplRecord</td>
+                    </tr>
+                    <tr>
+                        <td>Supervisor</td>
+                        <td>@Model.Supervisor</td>
+                    </tr>
+                    <tr>
+                        <td>Hire Date</td>
+                        <td>@Model.HireDate</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Rate</td>
+                        <td>$@Model.PayRate</td>
+                    </tr>
+                    <tr>
+                        <td>Last Pay Increase</td>
+                        <td>@Model.LastPayIncrease</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Increase Amount</td>
+                        <td>$@Model.PayIncreaseAmount</td>
+                    </tr>
+                    <tr>
+                        <td>Increase Input Date</td>
+                        <td>@Model.IncreaseInputDate</td>
+                    </tr>
+                    <tr>
+                        <td>Year In Program</td>
+                        <td>@Model.YearInProgram</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Grad Tuition</td>
+                        <td>@Model.PayGradTuition</td>
+                    </tr>
+                    <tr>
+                        <td>Name Change Completed</td>
+                        <td>@Model.NameChangeCompleted</td>
+                    </tr>
+                    <tr>
+                        <td>Notes</td>
+                        <td>@Model.Notes</td>
+                    </tr>
+                    <tr>
+                        <td>Terminated</td>
+                        <td>@Model.Terminated</td>
+                    </tr>
+                    <tr>
+                        <td>Termination Date</td>
+                        <td>@Model.TerminationDate</td>
+                    </tr>
+                    <tr>
+                        <td>Qualtrics Survey Sent</td>
+                        <td>@Model.QualtricsSurveySent</td>
+                    </tr>
+                    <tr>
+                        <td>Submitted E-Form</td>
+                        <td>@Model.SubmittedEForm</td>
+                    </tr>
+                    <tr>
+                        <td>E-Form Submission Date</td>
+                        <td>@Model.EFormSubmissionDate</td>
+                    </tr>
+                    <tr>
+                        <td>Authorization To Work Received</td>
+                        <td>@Model.AuthorizationToWorkReceived</td>
+                    </tr>
+                    <tr>
+                        <td>Authorization To Work Email Sent Date</td>
+                        <td>@Model.AuthorizationToWorkEmailSentDate</td>
+                    </tr>
+                    <tr>
+                        <td>BYU Name</td>
+                        <td>@Model.BYUName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
