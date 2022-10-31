@@ -1,9 +1,7 @@
 ﻿@{
     ViewData["Title"] = "View Employees";
 }
-
 @model EmployeesViewModel
-
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
@@ -17,33 +15,15 @@
                         <th>EmployeeId</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>International</th>
                         <th>Gender</th>
-                        <th>Eamil</th>
-                        <th>Expected Hours</th>
+                        <th>Email</th>
                         <th>Semester</th>
                         <th>Year</th>
-                        <th>Phone</th>
                         <th>BYU Id</th>
                         <th>Position Type</th>
                         <th>Class Code</th>
-                        <th>Employee Record</th>
                         <th>Supervisor</th>
-                        <th>Hire Date</th>
-                        <th>Wage</th>
-                        <th>Last Raise</th>
-                        <th>Raise Amount</th>
-                        <th>Program Year</th>
-                        <th>Grad Tuition</th>
-                        <th>Name Change</th>
-                        <th>Terminated</th>
-                        <th>Termination Date</th>
-                        <th>Survey Sent</th>
-                        <th>Form Submitted</th>
-                        <th>Form Submission Date</th>
-                        <th>Authorized</th>
-                        <th>Authorization Email Sent</th>
-                        <th>BYU Name</th>
+                        <th>More Details</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -51,33 +31,15 @@
                         <th>EmployeeId</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>International</th>
                         <th>Gender</th>
-                        <th>Eamil</th>
-                        <th>Expected Hours</th>
+                        <th>Email</th>
                         <th>Semester</th>
                         <th>Year</th>
-                        <th>Phone</th>
                         <th>BYU Id</th>
                         <th>Position Type</th>
                         <th>Class Code</th>
-                        <th>Employee Record</th>
                         <th>Supervisor</th>
-                        <th>Hire Date</th>
-                        <th>Wage</th>
-                        <th>Last Raise</th>
-                        <th>Raise Amount</th>
-                        <th>Program Year</th>
-                        <th>Grad Tuition</th>
-                        <th>Name Change</th>
-                        <th>Terminated</th>
-                        <th>Termination Date</th>
-                        <th>Survey Sent</th>
-                        <th>Form Submitted</th>
-                        <th>Form Submission Date</th>
-                        <th>Authorized</th>
-                        <th>Authorization Email Sent</th>
-                        <th>BYU Name</th>
+                        <th>More Details</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -87,36 +49,17 @@
                             <td>@e.EmployeeId</td>
                             <td>@e.FirstName</td>
                             <td>@e.LastName</td>
-                            <td>@e.International</td>
                             <td>@e.Gender</td>
                             <td>@e.Email</td>
-                            <td>@e.ExpectedHours</td>
                             <td>@e.Semester</td>
                             <td>@e.Year</td>
-                            <td>@e.Phone</td>
                             <td>@e.BYUID</td>
                             <td>@e.PositionType</td>
                             <td>@e.ClassCode</td>
-                            <td>@e.EmplRecord</td>
                             <td>@e.Supervisor</td>
-                            <td>@e.HireDate</td>
-                            <td>@e.PayRate</td>
-                            <td>@e.LastPayIncrease</td>
-                            <td>@e.PayIncreaseAmount</td>
-                            <td>@e.YearInProgram</td>
-                            <td>@e.PayGradTuition</td>
-                            <td>@e.NameChangeCompleted</td>
-                            <td>@e.Terminated</td>
-                            <td>@e.TerminationDate</td>
-                            <td>@e.QualtricsSurveySent</td>
-                            <td>@e.SubmittedEForm</td>
-                            <td>@e.EFormSubmissionDate</td>
-                            <td>@e.AuthorizationToWorkReceived</td>
-                            <td>@e.AuthorizationToWorkEmailSentDate</td>
-                            <td>@e.BYUName</td>
+                            <td><a asp-controller="home" asp-action="EmployeeDetails" asp-route-employeeId="@e.EmployeeId">View Details</a></td>
                         </tr>
                     }
-                   
                 </tbody>
             </table>
         </div>
