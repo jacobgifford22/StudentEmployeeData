@@ -4,33 +4,6 @@
 
 @model EmployeesViewModel
 
-@*<table class="table table-bordered table-striped">
-    <thead class="font-weight-bold bg-secondary text-white">
-        <tr>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var e in Model.Employees)
-        {
-            <tr>
-                <td>@e.FirstName</td>
-                <td>@e.LastName</td>
-
-                <td>
-                    <a class="btn btn-outline-secondary"
-                       asp-controller="Home"
-                       asp-action="EmployeeDetails"
-                       asp-route-employeeId="@e.EmployeeId">
-                        Details
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
