@@ -17,7 +17,8 @@
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 </head>
 
@@ -52,9 +53,9 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="EmployeeDetails">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Employee Details</span>
+                    <span>View Reports</span>
                 </a>
             </li>
 
@@ -91,7 +92,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <!--<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                    aria-label="Search" aria-describedby="basic-addon2">
@@ -101,7 +102,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form>-->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -119,7 +120,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Employee Data Table</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Student Employee Summary Data</h1>
 
                 </div>
                 <!-- /.container-fluid -->
