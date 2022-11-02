@@ -11,22 +11,41 @@ namespace StudentEmployeeData.Models
         [Key]
         [Required]
         public int EmployeeId { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string International { get; set; }
+        [Required]
         public string Gender { get; set; }
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required]
         public string ExpectedHours { get; set; }
+        [Required]
         public string Semester { get; set; }
+        [Required]
         public string Year { get; set; }
+        [Required]
+        [Phone]
         public string Phone { get; set; }
+        [Required]
         public string BYUID { get; set; }
+        [Required]
         public string PositionType { get; set; }
+        [Required]
         public string ClassCode { get; set; }
+        [Required]
         public string EmplRecord { get; set; }
+        [Required]
         public string Supervisor { get; set; }
+        [Required]
         public string HireDate { get; set; }
+        [Required]
         public string PayRate { get; set; }
+        [Required]
         public string LastPayIncrease { get; set; }
         public string PayIncreaseAmount { get; set; }
         public string IncreaseInputDate { get; set; }
