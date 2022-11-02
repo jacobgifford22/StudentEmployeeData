@@ -35,6 +35,7 @@ namespace StudentEmployeeData
             });
 
             services.AddScoped<IStudentEmployeeDataRepository, EFStudentEmployeeDataRepository>();
+            services.AddScoped<INotificationRepository, EFNotificationRepository>();
 
             services.AddHttpContextAccessor();
         }
