@@ -11,10 +11,12 @@ namespace StudentEmployeeData.Controllers
     public class NotificationsController : Controller
     {
         private INotificationRepository repo { get; set; }
+        //private Notification notification { get; set; }
 
         public NotificationsController(INotificationRepository temp)
         {
             repo = temp;
+            //notification = n;
         }
 
         [HttpGet]
@@ -28,11 +30,11 @@ namespace StudentEmployeeData.Controllers
             return View(x);
         }
 
-        public IActionResult Delete(Notification n)
+        /*public IActionResult Delete(Notification n)
         {
             repo.DeleteNotification(n);
 
             return RedirectToAction("NotificationDetails");
-        }
+        }*/
     }
 }

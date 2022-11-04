@@ -9,17 +9,12 @@ namespace StudentEmployeeData.Models
     {
         private EmployeeDbContext context { get; set; }
 
-        public EFNotificationRepository (EmployeeDbContext temp)
+        public EFNotificationRepository(EmployeeDbContext temp)
         {
             context = temp;
         }
 
         public IQueryable<Notification> Notifications => context.Notifications;
 
-        public void DeleteNotification(Notification n)
-        {
-            context.Remove(n);
-            context.SaveChanges();
-        }
     }
 }

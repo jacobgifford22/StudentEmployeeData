@@ -28,24 +28,27 @@
                 <tbody>
                     @foreach (var n in Model.Notifications)
                     {
-                        <tr>
-                            <td>@n.Type</td>
-                            <td>@n.EmployeeId</td>
-                            <td>@n.employee.FirstName</td>
-                            <td>@n.employee.LastName</td>
-                            <td>
-                                <form method="post" asp-controller="Notifications" asp-action="Delete">
-                                    <div class="col-md-auto">
-                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        @foreach (var i in n.Item)
+                        {
+                            <tr>
+                                <td>@i.Type</td>
+                                <td>@i.EmployeeId</td>
+                                <td>@i.employee.FirstName</td>
+                                <td>@i.employee.LastName</td>
+                                <td>
+                                    <form method="post" asp-controller="Notifications" asp-action="Delete">
+                                        <div class="col-md-auto">
+                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
 
-                                        <input type="hidden" asp-for="Notifications" />
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
+                                            <input type="hidden" asp-for="Notifications" />
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
                     }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
         </div>
     </div>
 </div>
