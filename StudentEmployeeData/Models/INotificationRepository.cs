@@ -8,8 +8,5 @@ namespace StudentEmployeeData.Models
     public interface INotificationRepository
     {
         IQueryable<Notification> Notifications { get; }
-
-        //CRUD Methods
-        public void DeleteNotification(Notification n);
     }
 }
