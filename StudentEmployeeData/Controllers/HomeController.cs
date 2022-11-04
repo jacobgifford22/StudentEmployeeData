@@ -40,6 +40,17 @@ namespace StudentEmployeeData.Controllers
         }
 
         [HttpGet]
+        public IActionResult ViewTableau()
+        {
+            var x = new TableauViewModel
+            {
+                Employees = _repo.Employees
+            };
+
+            return View(x);
+        }
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
