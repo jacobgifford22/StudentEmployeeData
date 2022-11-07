@@ -12,8 +12,8 @@ namespace StudentEmployeeData.Models
         [Key]
         [Required]
         public int NotificationId { get; set; }
-        [BindNever]
-        public ICollection<NotificationItem> Item { get; set; }
-
+        public string Type { get; set; }  //pay increase, not authorized to work, e-form not submitted
+        public string Message { get; set; }
+        public int EmployeeId { get; set; }
     }
 }

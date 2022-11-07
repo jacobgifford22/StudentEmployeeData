@@ -6,49 +6,55 @@
 
 
 <div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <a class="btn btn-outline-secondary" asp-controller="Notifications" asp-action="RefreshNotifications">Refresh</a>
+        <a class="btn btn-outline-danger" asp-controller="Notifications" asp-action="DeleteAllNotifications">Dismiss All</a>
+        <span class="text-gray-700">* Note: You must dismiss all notifications before refreshing. *</span>
+    </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Notification Type</th>
-                        <th>EmployeeId</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Message</th>
+                        <th>Employee ID</th>
+                        <th>Dismiss</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>Notification Type</th>
-                        <th>EmployeeId</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Message</th>
+                        <th>Employee ID</th>
+                        <th>Dismiss</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     @foreach (var n in Model.Notifications)
                     {
-                        @foreach (var i in n.Item)
-                        {
-                            <tr>
-                                <td>@i.Type</td>
-                                <td>@i.EmployeeId</td>
-                                <td>@i.employee.FirstName</td>
-                                <td>@i.employee.LastName</td>
-                                <td>
-                                    <form method="post" asp-controller="Notifications" asp-action="Delete">
-                                        <div class="col-md-auto">
-                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
 
-                                            <input type="hidden" asp-for="Notifications" />
-                                        </div>
-                                    </form>
-                                </td>
-                            </tr>
-                        }
+                        <tr>
+                            <td>@n.Type</td>
+                            <td>@n.Message</td>
+                            <td>
+                                <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="EmployeeDetails"
+                                   asp-route-employeeId="@n.EmployeeId">@n.EmployeeId</a>
+                            </td>
+                            <td>
+                                <form method="post" asp-controller="Notifications" asp-action="Delete" asp-route-notificationId="@n.NotificationId">
+                                    <div class="col-md-auto">
+                                        <button type="submit" class="btn btn-outline-danger">X</button>
+
+                                        <input type="hidden" asp-for="Notifications" />
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+
                     }
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

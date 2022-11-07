@@ -7,14 +7,41 @@ namespace StudentEmployeeData.Models
 {
     public class EFNotificationRepository : INotificationRepository
     {
-        private EmployeeDbContext context { get; set; }
+        private NotificationsDbContext _context { get; set; }
 
-        public EFNotificationRepository(EmployeeDbContext temp)
+        public EFNotificationRepository(NotificationsDbContext temp)
         {
-            context = temp;
+            _context = temp;
         }
 
-        public IQueryable<Notification> Notifications => context.Notifications;
+        public IQueryable<Notification> Notifications => _context.Notifications;
 
+        public void AddNotification(Notification n)
+        {
+            _context.Add(n);
+            _context.SaveChanges();
+        }
+
+        public void DeleteNotification(Notification n)
+        {
+            _context.Remove(n);
+            _context.SaveChanges();
+        }
+
+        public void SaveNotification(Notification n)
+        {
+            _context.Update(n);
+            _context.SaveChanges();
+        }
+
+        public void DeleteAllNotifications(IQueryable<Notification> notifications)
+        {
+            foreach (var n in notifications)
+            {
+                _context.Remove(n);
+            }
+
+            _context.SaveChanges();
+        }
     }
 }
