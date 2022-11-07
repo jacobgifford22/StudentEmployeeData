@@ -8,7 +8,7 @@ namespace StudentEmployeeData.Models
 {
     public class NotificationList
     {
-        public List<NotificationItem> Items { get; set; } = new List<NotificationItem>();
+        public List<Notification> Items { get; set; } = new List<Notification>();
 
         public List<Employee> EmployeeList { get; set; } = new List<Employee>();
 
@@ -19,7 +19,7 @@ namespace StudentEmployeeData.Models
             {
                 if ((item.SubmittedEForm == "no") && (DateTime.Today > Convert.ToDateTime(item.AuthorizationToWorkEmailSentDate).AddDays(7)))
                 {
-                    Items.Add(new NotificationItem
+                    Items.Add(new Notification
                     {
                         Type = "E-form not submitted",
                         Message = "This student has not submitted their e-form.",
@@ -33,7 +33,7 @@ namespace StudentEmployeeData.Models
             {
                 if (DateTime.Today > Convert.ToDateTime(item.IncreaseInputDate).AddMonths(4))
                 {
-                    Items.Add(new NotificationItem
+                    Items.Add(new Notification
                     {
                         Type = "Pay Increase",
                         Message = "Increase pay rate.",
@@ -47,7 +47,7 @@ namespace StudentEmployeeData.Models
             {
                 if ((item.AuthorizationToWorkReceived == "No") && (DateTime.Today > Convert.ToDateTime(item.EFormSubmissionDate).AddDays(7)))
                 {
-                    Items.Add(new NotificationItem
+                    Items.Add(new Notification
                     {
                         Type = "Authorization to Work",
                         Message = "Reminder to follow up with student about authorization to work.",
@@ -61,16 +61,5 @@ namespace StudentEmployeeData.Models
         {
             Items.RemoveAll(x => x.Project.ProjectId == proj.ProjectId);
         }*/
-    }
-
-    public class NotificationItem
-    {
-        [Key]
-        [Required]
-        public int NotificationItemId { get; set; }
-        public string Type { get; set; }  //pay increase, not authorized to work, e-form not submitted
-        public string Message { get; set; }
-        public int EmployeeId { get; set; }
-        public Employee employee { get; set; }
     }
 }
